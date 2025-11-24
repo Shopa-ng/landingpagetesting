@@ -144,7 +144,7 @@ export const Banner = () => {
           {/* Right Side - 3D Tilt */}
           <div className="w-full lg:w-[48%] px-4 lg:px-0 mt-6 lg:mt-0 perspective-1000">
             <motion.div
-              className="bg-green-200 rounded-[10px] pt-10 px-10"
+              className="rounded-[10px] pt-10 px-10"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               style={{
@@ -159,7 +159,7 @@ export const Banner = () => {
                   alt=""
                   className="w-full max-w-[440px] mx-auto"
                   style={{
-                    z: 50, // Pop out effect
+                    z: 50,
                     transform: "translateZ(50px)",
                   }}
                 />

@@ -37,7 +37,7 @@ export const MagneticButton = ({
       onMouseLeave={handleMouseLeave}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className={`relative z-10 ${className}`}
+      className={`relative z-10 cursor-pointer ${className}`}
       onClick={onClick}
       {...props}
     >
