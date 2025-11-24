@@ -1,5 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+import { MagneticButton } from "@/components/ui/magnetic-button";
+
 export const Carousel = () => {
   const handleJoinClick = () => {
     const el = document.getElementById("waitlist");
@@ -9,9 +13,13 @@ export const Carousel = () => {
   };
   return (
     <div className="max-w-[1440px] mx-auto">
-      <div
+      <motion.div
         className="bg-cover bg-center bg-no-repeat rounded-[10px] sm:mt-10 mt-0 py-16 px-4 sm:py-20 sm:px-6 md:py-24 md:px-10"
         style={{ backgroundImage: `url("/assets/section.svg")` }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
       >
         <div className="flex flex-col items-center justify-center text-center">
           <h1 className="text-green-400 text-[16px] sm:text-[18px] md:text-[20px] font-semibold">
@@ -23,15 +31,14 @@ export const Carousel = () => {
             Shopa app before it's launched to the public
           </h1>
 
-          <button
-            type="button"
+          <MagneticButton
             onClick={handleJoinClick}
             className="tracking-wide text-[12px] sm:text-[13px] md:text-[14px] font-light bg-amber-300 px-5 sm:px-6 md:px-8 py-2 sm:py-3 mt-4 rounded-lg"
           >
             Join The Waitlist
-          </button>
+          </MagneticButton>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,11 +1,38 @@
 "use client";
 
 import { infoArray } from "@/constants/info";
+import { motion } from "framer-motion";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const Info = () => {
   const handleJoinClick = () => {
     const el = document.getElementById("waitlist");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0, scale: 0.8, rotateX: -15 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      rotateX: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 10,
+      },
+    },
   };
 
   return (
@@ -15,42 +42,68 @@ const Info = () => {
         style={{ backgroundImage: `url("/assets/paper-texture.svg")` }}
       >
         <div className="px-2 sm:px-6 md:px-10">
-          <h1 className="text-center text-green-700 text-2xl sm:text-3xl font-bold tracking-wide">
-            Who it&apos;s for
-          </h1>
-          <p className="text-[#787878] text-sm sm:text-base mt-3 w-full sm:w-[90%] md:w-[83%] text-center mx-auto">
-            Whether you&apos;re a buyer or a seller in a university community,
-            Shopa is built for you.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-center text-green-700 text-2xl sm:text-3xl font-bold tracking-wide">
+              Who it&apos;s for
+            </h1>
+            <p className="text-[#787878] text-sm sm:text-base mt-3 w-full sm:w-[90%] md:w-[83%] text-center mx-auto">
+              Whether you&apos;re a buyer or a seller in a university community,
+              Shopa is built for you.
+            </p>
+          </motion.div>
 
-          <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+          <motion.div
+            className="mt-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 perspective-1000"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {infoArray.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div
+                <motion.div
                   key={index}
-                  className="rounded-lg py-8 px-6 flex flex-col shadow-sm hover:shadow-md transition-shadow"
-                  style={{ backgroundColor: item.background }}
+                  variants={itemVariants}
+                  className="h-full"
                 >
-                  <div className="mb-2">
-                    <Icon size={28} color={item.iconColor} />
-                  </div>
+                  <SpotlightCard
+                    className="rounded-lg py-8 px-6 flex flex-col shadow-sm hover:shadow-md transition-shadow h-full"
+                    spotlightColor={item.background} // Use the item's background color for the spotlight
+                  >
+                    <div className="mb-2">
+                      <Icon size={28} color={item.iconColor} />
+                    </div>
 
-                  <h2 className="text-xl font-semibold mt-3">{item.Header}</h2>
-                  <p className="mt-2 text-sm text-gray-700 leading-relaxed">
-                    {item.content}
-                  </p>
-                  <img
-                    src={item.image}
-                    alt={item.Header}
-                    className="mt-5 mb-1 w-full max-w-[220px] h-auto mx-auto"
-                  />
-                </div>
+                    <h2 className="text-xl font-semibold mt-3">
+                      {item.Header}
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                      {item.content}
+                    </p>
+                    <img
+                      src={item.image}
+                      alt={item.Header}
+                      className="mt-5 mb-1 w-full max-w-[220px] h-auto mx-auto"
+                    />
+                  </SpotlightCard>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
-          <div className="mt-8 flex justify-center">
+          <motion.div
+            className="mt-8 flex justify-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+          >
             <button
               type="button"
               onClick={handleJoinClick}
@@ -58,7 +111,7 @@ const Info = () => {
             >
               Join The Waitlist
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

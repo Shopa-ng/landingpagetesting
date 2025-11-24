@@ -1,11 +1,14 @@
+import { Toaster } from "@/components/ui/sonner";
+import { satoshi } from "@/fonts/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
-import { satoshi } from "@/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Shopa",
   description: "Buy, Sell, Connect",
 };
+
+import { SmoothScroll } from "@/components/smooth-scroll";
 
 export default function RootLayout({
   children,
@@ -14,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${satoshi.className} antialiased`}>{children}</body>
+      <body className={`${satoshi.className} antialiased`}>
+        <SmoothScroll>{children}</SmoothScroll>
+        <Toaster richColors position="top-right" duration={2000} />
+      </body>
     </html>
   );
 }
