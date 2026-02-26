@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import React from "react";
 import prisma from "@/lib/prisma";
 import { Resend } from "resend";
 import { WaitlistEmail } from "@/components/emails/waitlist-email";
@@ -43,10 +44,10 @@ export async function joinWaitlist(formData: FormData) {
         from: "Shopa <noreply@shopa.ng>",
         to: email,
         subject: "Welcome to the Shopa Waitlist! 🎉",
-        react: WaitlistEmail({
+        react: React.createElement(WaitlistEmail, {
           name: name,
           message: undefined,
-        }) as React.ReactElement,
+        }),
       });
     } catch (emailError) {
       console.error("Error sending welcome email:", emailError);

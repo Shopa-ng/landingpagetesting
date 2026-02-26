@@ -1,5 +1,6 @@
 "use server";
 
+import React from "react";
 import prisma from "@/lib/prisma";
 import { Resend } from "resend";
 import { WaitlistEmail } from "@/components/emails/waitlist-email";
@@ -53,10 +54,10 @@ export async function sendWaitlistEmails(options: {
           from: "Shopa <noreply@shopa.ng>",
           to: member.email,
           subject: subject,
-          react: WaitlistEmail({
+          react: React.createElement(WaitlistEmail, {
             name: member.name,
             message: message,
-          }) as React.ReactElement,
+          }),
         })
       )
     );
