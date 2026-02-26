@@ -10,6 +10,8 @@ export function waitlistEmailHTML(name: string, message?: string) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <meta name="supported-color-schemes" content="light" />
     <title>Welcome to Shopa</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
@@ -23,26 +25,26 @@ export function waitlistEmailHTML(name: string, message?: string) {
             <table role="presentation" width="600" cellpadding="0" cellspacing="0" bgcolor="#FDC500" style="background-color:#FDC500;border-collapse:collapse;margin:0;padding:0;">
               <tbody>
                 <tr>
-                  <td bgcolor="#FDC500" style="background-color:#FDC500;padding:48px 40px 40px 40px;margin:0;color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;"><font color="#151515" style="color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">
+                  <td bgcolor="#FDC500" style="background-color:#FDC500;padding:48px 40px 40px 40px;margin:0;color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;"><font color="#151515" style="color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">
                     <div style="text-align:center;margin:0 0 32px 0;padding:0;">
                       <img src="${logoSvg}" alt="Shopa" style="height:44px;width:auto;display:inline-block;" />
                     </div>
-                    <h1 style="font-size:32px;font-weight:700;margin:0 0 24px 0;line-height:1.3;color:#151515 !important;text-align:center;font-family:'Plus Jakarta Sans',Arial,sans-serif;"><font color="#151515">Thank you for joining the <span style="color:#2E7D32 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Shopa</span> waitlist!</font></h1>
+                    <h1 style="font-size:32px;font-weight:700;margin:0 0 24px 0;line-height:1.3;color:#151515 !important;-webkit-text-fill-color:#151515 !important;text-align:center;font-family:'Plus Jakarta Sans',Arial,sans-serif;"><font color="#151515">Thank you for joining the <span style="color:#2E7D32 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Shopa</span> waitlist!</font></h1>
 
-                    <p style="font-size:16px;line-height:1.6;margin:20px 0;color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Hi ${safeName},</p>
+                    <p style="font-size:16px;line-height:1.6;margin:20px 0;color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Hi ${safeName},</p>
 
-                    <p style="font-size:16px;line-height:1.6;margin:20px 0;color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">This means you'll be amongst <strong style="color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">the first to get major updates</strong> about Shopa, get the opportunity to <strong style="color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">participate</strong> in our usability testing before official launch, see special offers and promotions and <strong style="color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">stand a chance</strong> to win amazing prizes from Shopa!</p>
+                    <p style="font-size:16px;line-height:1.6;margin:20px 0;color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">This means you'll be amongst <strong style="color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">the first to get major updates</strong> about Shopa, get the opportunity to <strong style="color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">participate</strong> in our usability testing before official launch, see special offers and promotions and <strong style="color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">stand a chance</strong> to win amazing prizes from Shopa!</p>
 
-                    <p style="font-size:16px;line-height:1.6;margin:20px 0;color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;"><strong style="color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Please ensure to follow us</strong> across all social media platforms <strong style="color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">@shopanigeria</strong> to be a part of our growing community and also share to your friends!</p>
+                    <p style="font-size:16px;line-height:1.6;margin:20px 0;color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;"><strong style="color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Please ensure to follow us</strong> across all social media platforms <strong style="color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">@shopanigeria</strong> to be a part of our growing community and also share to your friends!</p>
 
-                    <p style="font-size:16px;line-height:1.6;margin:20px 0;color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">We can't wait to have you on board with the wonderful project we're building that could potentially change the fortunes of student e-commerce.</p>
+                    <p style="font-size:16px;line-height:1.6;margin:20px 0;color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">We can't wait to have you on board with the wonderful project we're building that could potentially change the fortunes of student e-commerce.</p>
 
-                    ${safeMessage ? `<div style="background-color:#f0f8f0;padding:16px;margin:24px 0;font-size:15px;line-height:1.6;color:#151515 !important;border-left:4px solid #2E7D32 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">${safeMessage}</div>` : ""}
+                    ${safeMessage ? `<div style="background-color:#f0f8f0;padding:16px;margin:24px 0;font-size:15px;line-height:1.6;color:#151515 !important;-webkit-text-fill-color:#151515 !important;border-left:4px solid #2E7D32 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">${safeMessage}</div>` : ""}
 
-                    <p style="font-size:16px;font-weight:600;margin:32px 0 0 0;color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Courtesy,<br/>Shopa.</p>
+                    <p style="font-size:16px;font-weight:600;margin:32px 0 0 0;color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Courtesy,<br/>Shopa.</p>
 
-                    <div style="margin-top:40px;padding-top:20px;border-top:1px solid #ddd;font-size:12px;text-align:center;color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">
-                      <p style="margin:8px 0;color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">© 2026 Shopa. All rights reserved.<br/><span style="font-weight:600;color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Buy, Sell, Connect</span></p>
+                    <div style="margin-top:40px;padding-top:20px;border-top:1px solid #ddd;font-size:12px;text-align:center;color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">
+                      <p style="margin:8px 0;color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">© 2026 Shopa. All rights reserved.<br/><span style="font-weight:600;color:#151515 !important;-webkit-text-fill-color:#151515 !important;font-family:'Plus Jakarta Sans',Arial,sans-serif;">Buy, Sell, Connect</span></p>
                     </div>
                     </font>
                   </td>
