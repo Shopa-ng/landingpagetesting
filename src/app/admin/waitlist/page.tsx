@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
+import { deleteWaitlistMember } from "@/actions/actions";
 import styles from "./page.module.css";
 
 interface WaitlistMember {
@@ -18,6 +19,7 @@ export default function WaitlistDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState<"name" | "email" | "date">("date");
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchWaitlist = async () => {
@@ -77,6 +79,28 @@ export default function WaitlistDashboard() {
     a.click();
     window.URL.revokeObjectURL(url);
     toast.success("Waitlist exported as CSV");
+  };
+
+  const handleDelete = async (id: string, name: string) => {
+    if (!window.confirm(`Are you sure you want to delete ${name}?`)) {
+      return;
+    }
+
+    setDeletingId(id);
+    try {
+      const result = await deleteWaitlistMember(id);
+      if (result.success) {
+        setMembers((prev) => prev.filter((m) => m.id !== id));
+        toast.success(result.success);
+      } else {
+        toast.error(result.error || "Failed to delete member");
+      }
+    } catch (error) {
+      console.error("Error deleting member:", error);
+      toast.error("Failed to delete member");
+    } finally {
+      setDeletingId(null);
+    }
   };
 
   return (
@@ -162,6 +186,7 @@ export default function WaitlistDashboard() {
                   <th className={styles.tableHeaderCell}>University</th>
                   <th className={styles.tableHeaderCell}>Message</th>
                   <th className={styles.tableHeaderCell}>Joined</th>
+                  <th className={styles.tableHeaderCell}>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -196,6 +221,15 @@ export default function WaitlistDashboard() {
                         month: "short",
                         day: "numeric",
                       })}
+                    </td>
+                    <td className={styles.tableCell}>
+                      <button
+                        onClick={() => handleDelete(member.id, member.name)}
+                        disabled={deletingId === member.id}
+                        className={styles.deleteButton}
+                      >
+                        {deletingId === member.id ? "Deleting..." : "Delete"}
+                      </button>
                     </td>
                   </tr>
                 ))}

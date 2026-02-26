@@ -184,6 +184,28 @@
   text-decoration: underline;
 }
 
+.deleteButton {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.deleteButton:hover {
+  background: #991b1b;
+}
+
+.deleteButton:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
 .messageCell {
   max-width: 300px;
   white-space: nowrap;

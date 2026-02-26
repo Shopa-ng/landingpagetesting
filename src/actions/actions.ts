@@ -64,3 +64,17 @@ export async function joinWaitlist(formData: FormData) {
     return { error: "Something went wrong. Please try again." };
   }
 }
+
+export async function deleteWaitlistMember(id: string) {
+  try {
+    await prisma.waitlist.delete({
+      where: { id },
+    });
+
+    revalidatePath("/admin/waitlist");
+    return { success: "Member deleted successfully" };
+  } catch (error) {
+    console.error("Error deleting waitlist member:", error);
+    return { error: "Failed to delete member" };
+  }
+}
