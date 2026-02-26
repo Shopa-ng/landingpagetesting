@@ -55,7 +55,7 @@ export async function sendWaitlistEmails(options: {
 
     // Count successful sends
     const successful = results.filter(
-      (r) => r.status === "fulfilled" && r.value.id
+      (r) => r.status === "fulfilled" && "data" in r.value && r.value.data
     ).length;
     const failed = results.length - successful;
 
