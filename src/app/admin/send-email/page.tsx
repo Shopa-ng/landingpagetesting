@@ -27,8 +27,15 @@ export default function SendEmailPage() {
       if (result.success) {
         toast.success(result.message);
         setMessage("");
+        if (result.failures && result.failures.length > 0) {
+          console.error("Email failures:", result.failures);
+          toast.error(`Some emails failed (${result.failures.length}). Check console.`);
+        }
       } else {
         toast.error(result.error || "Failed to send emails");
+        if ((result as any).failures) {
+          console.error("Email failures:", (result as any).failures);
+        }
       }
     } catch (error) {
       toast.error("Something went wrong");
