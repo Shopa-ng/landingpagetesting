@@ -39,20 +39,26 @@ export async function joinWaitlist(formData: FormData) {
     });
 
     // Send welcome email automatically
+    let emailErrorMsg: string | null = null;
     try {
       await resend.emails.send({
-        from: "Shopa <noreply@shopa.ng>",
+        from: "Shopa <noreply@contact.shopshopa.com.ng>",
         to: email,
         subject: "Welcome to the Shopa Waitlist! 🎉",
         html: waitlistEmailHTML(name, undefined),
       });
     } catch (emailError) {
       console.error("Error sending welcome email:", emailError);
+      emailErrorMsg =
+        emailError instanceof Error ? emailError.message : String(emailError);
       // Don't fail the waitlist join if email fails
     }
 
     revalidatePath("/");
-    return { success: "You have successfully joined the waitlist!" };
+    return {
+      success: "You have successfully joined the waitlist!",
+      emailError: emailErrorMsg,
+    };
   } catch (error) {
     console.error("Error joining waitlist:", error);
     return { error: "Something went wrong. Please try again." };

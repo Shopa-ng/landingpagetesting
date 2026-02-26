@@ -51,7 +51,7 @@ export async function sendWaitlistEmails(options: {
     const results = await Promise.allSettled(
       waitlistMembers.map((member) =>
         resend.emails.send({
-          from: "Shopa <noreply@shopa.ng>",
+          from: "Shopa <noreply@contact.shopshopa.com.ng>",
           to: member.email,
           subject: subject,
           html: waitlistEmailHTML(member.name || "", message),
