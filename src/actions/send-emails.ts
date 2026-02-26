@@ -12,6 +12,14 @@ export async function sendWaitlistEmails(options: {
   recipientEmails?: string[]; // If provided, only send to these emails
 }) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY environment variable");
+      return {
+        success: false,
+        error: "Missing RESEND_API_KEY environment variable",
+        sent: 0,
+      };
+    }
     const { subject, message, recipientEmails } = options;
 
     // Fetch waitlist members
@@ -53,18 +61,33 @@ export async function sendWaitlistEmails(options: {
       )
     );
 
-    // Count successful sends
+    // Collect results and failure details
     const successful = results.filter(
-      (r) => r.status === "fulfilled" && "data" in r.value && r.value.data
+      (r) => r.status === "fulfilled" && "data" in (r as any).value && (r as any).value.data
     ).length;
-    const failed = results.length - successful;
+
+    const failures: string[] = [];
+    results.forEach((r, idx) => {
+      if (r.status === "rejected") {
+        failures.push(`${waitlistMembers[idx].email}: ${(r as PromiseRejectedResult).reason?.message || String((r as PromiseRejectedResult).reason)}`);
+      } else {
+        // fulfilled but missing data
+        const v = (r as PromiseFulfilledResult<any>).value;
+        if (!v || !("data" in v) || !v.data) {
+          failures.push(`${waitlistMembers[idx].email}: no-data-or-error`);
+        }
+      }
+    });
+
+    const failed = failures.length;
 
     return {
-      success: true,
+      success: failed === 0,
       sent: successful,
       failed: failed,
       total: waitlistMembers.length,
-      message: `Successfully sent ${successful} emails. ${failed > 0 ? `${failed} failed.` : ""}`,
+      message: `Sent ${successful}/${waitlistMembers.length} emails. ${failed} failed.`,
+      failures: failures,
     };
   } catch (error) {
     console.error("Error sending emails:", error);
