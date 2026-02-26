@@ -3,7 +3,7 @@
 import React from "react";
 import prisma from "@/lib/prisma";
 import { Resend } from "resend";
-import { WaitlistEmail } from "@/components/emails/waitlist-email";
+import { waitlistEmailHTML } from "@/components/emails/waitlist-email-html";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -54,10 +54,7 @@ export async function sendWaitlistEmails(options: {
           from: "Shopa <noreply@shopa.ng>",
           to: member.email,
           subject: subject,
-          react: React.createElement(WaitlistEmail, {
-            name: member.name,
-            message: message,
-          }),
+          html: waitlistEmailHTML(member.name || "", message),
         })
       )
     );
