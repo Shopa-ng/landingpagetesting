@@ -20,6 +20,10 @@ export const Form = () => {
       if (result.success) {
         toast.success(result.success);
         (event.target as HTMLFormElement).reset();
+        if ((result as any).emailError) {
+          console.error("Welcome email error:", (result as any).emailError);
+          toast.error("Joined but welcome email failed. Check console.");
+        }
       } else if (result.error) {
         toast.error(result.error);
       }
