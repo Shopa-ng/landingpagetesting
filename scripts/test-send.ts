@@ -3,7 +3,7 @@ import dotenv from "dotenv";
  dotenv.config({ path: ".env.local" });
 
 import { Resend } from "resend";
-import { waitlistEmailHTML } from "../src/components/emails/waitlist-email-html.ts";
+import { waitlistEmailHTML } from "../src/components/emails/waitlist-email-html";
 
 async function main() {
   const resend = new Resend(process.env.RESEND_API_KEY || "");
