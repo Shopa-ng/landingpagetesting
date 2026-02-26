@@ -54,18 +54,4 @@ export function waitlistEmailHTML(name: string, message?: string) {
     </table>
   </body>
 </html>`;
-
-                    <div style="margin-top:40px;padding-top:20px;border-top:1px solid #ddd;font-size:12px;text-align:center;color:#151515;font-family:Arial,sans-serif;">
-                      <p style="margin:8px 0;color:#151515;font-family:Arial,sans-serif;">© 2026 Shopa. All rights reserved.<br/><span style="font-weight:600;color:#151515;font-family:Arial,sans-serif;">Buy, Sell, Connect</span></p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </body>
-</html>`;
 }
