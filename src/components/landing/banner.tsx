@@ -98,7 +98,7 @@ export const Banner = () => {
             <div className="overflow-hidden mb-2">
               <motion.h1
                 variants={textVariants}
-                className="tracking-wide font-semibold leading-snug text-2xl sm:text-3xl lg:text-4xl text-white"
+                className="tracking-[-0.04em] font-semibold leading-snug text-2xl sm:text-3xl lg:text-4xl text-white"
               >
                 The <span className="text-amber-400">Campus Marketplace </span>
               </motion.h1>
@@ -106,7 +106,7 @@ export const Banner = () => {
             <div className="overflow-hidden mb-2">
               <motion.h1
                 variants={textVariants}
-                className="tracking-wide font-semibold leading-snug text-2xl sm:text-3xl lg:text-4xl text-white"
+                className="tracking-[-0.04em] font-semibold leading-snug text-2xl sm:text-3xl lg:text-4xl text-white"
               >
                 That Brings <span className="text-amber-400">Students </span>
               </motion.h1>
@@ -114,7 +114,7 @@ export const Banner = () => {
             <div className="overflow-hidden mb-2">
               <motion.h1
                 variants={textVariants}
-                className="tracking-wide font-semibold leading-snug text-2xl sm:text-3xl lg:text-4xl text-white"
+                className="tracking-[-0.04em] font-semibold leading-snug text-2xl sm:text-3xl lg:text-4xl text-white"
               >
                 <span className="text-amber-400">Together</span>
               </motion.h1>
@@ -123,7 +123,7 @@ export const Banner = () => {
             <div className="overflow-hidden mt-3 mb-4">
               <motion.p
                 variants={textVariants}
-                className="tracking-wider text-[13px] text-[#ffffffe4] w-full lg:w-[70%] mx-auto lg:mx-0"
+                className="tracking-[-0.04em] lg:tracking-wider text-[13px] lg:text-[20px] text-[#ffffffe4] w-full lg:w-[70%] mx-auto lg:mx-0"
               >
                 The first e-commerce platform built exclusively for{" "}
                 <span className="text-amber-400">all</span> Nigerian university
