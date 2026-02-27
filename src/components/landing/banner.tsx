@@ -149,9 +149,9 @@ export const Banner = () => {
           </motion.div>
 
           {/* Right Side - 3D Tilt */}
-          <div className="w-full lg:w-[48%] px-4 lg:px-0 mt-6 lg:mt-0 perspective-1000">
+          <div className="w-full lg:w-[48%] px-4 lg:px-0 mt-6 lg:mt-0 perspective-1000 flex justify-center">
             <motion.div
-              className="rounded-[10px] pt-10 px-10"
+              className="rounded-[10px] w-full max-w-[360px] sm:max-w-[440px] lg:max-w-[560px] pt-4 sm:pt-6 lg:pt-10 px-2 sm:px-4 lg:px-10"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               style={{
@@ -160,11 +160,11 @@ export const Banner = () => {
                 transformStyle: "preserve-3d",
               }}
             >
-              <div className="size-[440px] relative">
+              <div className="w-full relative aspect-[681/630]">
                 <motion.img
-                  src="/assets/object.svg"
+                  src="/assets/content.svg"
                   alt=""
-                  className="w-full max-w-[440px] mx-auto"
+                  className="w-full h-full object-contain mx-auto"
                   style={{
                     z: 50,
                     transform: "translateZ(50px)",
