@@ -95,50 +95,57 @@ export const Banner = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="overflow-hidden mb-2">
-              <motion.h1
-                variants={textVariants}
-                className="tracking-[-0.04em] font-semibold leading-snug text-2xl sm:text-3xl lg:text-4xl text-white"
-              >
-                The <span className="text-amber-400">Campus Marketplace </span>
-              </motion.h1>
-            </div>
-            <div className="overflow-hidden mb-2">
-              <motion.h1
-                variants={textVariants}
-                className="tracking-[-0.04em] font-semibold leading-snug text-2xl sm:text-3xl lg:text-4xl text-white"
-              >
-                That Brings <span className="text-amber-400">Students </span>
-              </motion.h1>
-            </div>
-            <div className="overflow-hidden mb-2">
-              <motion.h1
-                variants={textVariants}
-                className="tracking-[-0.04em] font-semibold leading-snug text-2xl sm:text-3xl lg:text-4xl text-white"
-              >
-                <span className="text-amber-400">Together</span>
-              </motion.h1>
-            </div>
+            <div className="space-y-[10px] lg:space-y-[50px]">
+              <div>
+                <div className="overflow-hidden">
+                  <motion.h1
+                    variants={textVariants}
+                    className="tracking-[-0.04em] font-semibold text-[28px] leading-[40px] lg:text-[54px] lg:leading-[70px] text-white"
+                  >
+                    The{" "}
+                    <span className="text-amber-400">Campus Marketplace </span>
+                  </motion.h1>
+                </div>
+                <div className="overflow-hidden">
+                  <motion.h1
+                    variants={textVariants}
+                    className="tracking-[-0.04em] font-semibold text-[28px] leading-[40px] lg:text-[54px] lg:leading-[70px] text-white"
+                  >
+                    That Brings{" "}
+                    <span className="text-amber-400">Students </span>
+                  </motion.h1>
+                </div>
+                <div className="overflow-hidden">
+                  <motion.h1
+                    variants={textVariants}
+                    className="tracking-[-0.04em] font-semibold text-[28px] leading-[40px] lg:text-[54px] lg:leading-[70px] text-white"
+                  >
+                    <span className="text-amber-400">Together</span>
+                  </motion.h1>
+                </div>
+              </div>
 
-            <div className="overflow-hidden mt-3 mb-4">
-              <motion.p
-                variants={textVariants}
-                className="tracking-[-0.04em] lg:tracking-wider text-[13px] lg:text-[20px] text-[#ffffffe4] w-full lg:w-[70%] mx-auto lg:mx-0"
-              >
-                The first e-commerce platform built exclusively for{" "}
-                <span className="text-amber-400">all</span> Nigerian university
-                students. Buy, sell and grow all within your campus community
-              </motion.p>
-            </div>
+              <div className="overflow-hidden">
+                <motion.p
+                  variants={textVariants}
+                  className="tracking-[-0.04em] text-[14px] leading-[28px] lg:text-[20px] lg:leading-[38px] text-[#ffffffe4] w-full lg:w-[70%] mx-auto lg:mx-0"
+                >
+                  The first e-commerce platform built exclusively for{" "}
+                  <span className="text-amber-400">all</span> Nigerian
+                  university students. Buy, sell and grow all within your
+                  campus community
+                </motion.p>
+              </div>
 
-            <motion.div variants={textVariants}>
-              <MagneticButton
-                onClick={handleJoinClick}
-                className="tracking-wide text-[13px] font-light bg-amber-300 px-6 py-2.5 mt-4 rounded-lg mx-auto lg:mx-0 inline-block"
-              >
-                Join The Waitlist
-              </MagneticButton>
-            </motion.div>
+              <motion.div variants={textVariants}>
+                <MagneticButton
+                  onClick={handleJoinClick}
+                  className="tracking-[-0.04em] text-[14px] font-medium bg-amber-300 px-6 h-[50px] rounded-lg mx-auto lg:mx-0 inline-flex items-center justify-center"
+                >
+                  Join The Waitlist
+                </MagneticButton>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Right Side - 3D Tilt */}

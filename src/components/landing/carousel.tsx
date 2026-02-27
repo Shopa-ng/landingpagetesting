@@ -33,7 +33,7 @@ export const Carousel = () => {
 
           <MagneticButton
             onClick={handleJoinClick}
-            className="tracking-wide text-[12px] sm:text-[13px] md:text-[14px] font-light bg-amber-300 px-5 sm:px-6 md:px-8 py-2 sm:py-3 mt-4 rounded-lg"
+            className="tracking-[-0.04em] text-[14px] font-medium bg-amber-300 px-5 sm:px-6 md:px-8 h-[50px] mt-4 rounded-lg inline-flex items-center justify-center"
           >
             Join The Waitlist
           </MagneticButton>

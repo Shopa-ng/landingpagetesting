@@ -127,4 +127,10 @@
   h6 {
     font-family: var(--font-satoshi), sans-serif;
   }
+
+  :where(.landing-page p) {
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+  }
 }

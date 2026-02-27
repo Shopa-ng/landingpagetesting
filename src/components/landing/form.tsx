@@ -79,7 +79,7 @@ export const Form = () => {
               <MagneticButton
                 type="submit"
                 disabled={isPending}
-                className="tracking-wide text-[13px] sm:text-[14px] md:text-[15px] font-light bg-amber-300 px-6 w-full py-3 mt-4 rounded-lg disabled:opacity-50"
+                className="tracking-[-0.04em] text-[14px] font-medium bg-amber-300 px-6 w-full h-[50px] mt-4 rounded-lg disabled:opacity-50 inline-flex items-center justify-center"
               >
                 {isPending ? "Joining..." : "Join The Waitlist"}
               </MagneticButton>

@@ -7,7 +7,7 @@ import Info from "./info";
 
 export const LandingPage = () => {
   return (
-    <div className="">
+    <div className="landing-page">
       <Banner />
       <AboutSection />
       <Info />

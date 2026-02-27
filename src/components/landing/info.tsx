@@ -107,7 +107,7 @@ const Info = () => {
             <button
               type="button"
               onClick={handleJoinClick}
-              className="tracking-wide text-sm sm:text-base font-light bg-amber-300 text-gray-900 px-6 py-2.5 rounded-lg cursor-pointer hover:bg-amber-400 duration-200 transition"
+              className="tracking-[-0.04em] text-[14px] font-medium bg-amber-300 text-gray-900 px-6 h-[50px] rounded-lg cursor-pointer hover:bg-amber-400 duration-200 transition inline-flex items-center justify-center"
             >
               Join The Waitlist
             </button>
