@@ -95,8 +95,8 @@ export const Banner = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="space-y-[10px] lg:space-y-[50px]">
-              <div>
+            <div className="space-y-[10px] lg:space-y-[20px]">
+              <div className="lg:w-[597px]">
                 <div className="overflow-hidden">
                   <motion.h1
                     variants={textVariants}
@@ -128,7 +128,7 @@ export const Banner = () => {
               <div className="overflow-hidden">
                 <motion.p
                   variants={textVariants}
-                  className="tracking-[-0.04em] text-[14px] leading-[28px] lg:text-[20px] lg:leading-[38px] text-[#ffffffe4] w-full lg:w-[70%] mx-auto lg:mx-0"
+                  className="tracking-[-0.04em] text-[14px] leading-[28px] lg:text-[20px] lg:leading-[38px] text-[#ffffffe4] w-full lg:w-[597px] mx-auto lg:mx-0"
                 >
                   The first e-commerce platform built exclusively for{" "}
                   <span className="text-amber-400">all</span> Nigerian
