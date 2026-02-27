@@ -1,5 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
-import { satoshi } from "@/fonts/fonts";
+import { plusJakartaSans, satoshi } from "@/fonts/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${satoshi.className} antialiased`}>
+      <body
+        className={`${plusJakartaSans.className} ${plusJakartaSans.variable} ${satoshi.variable} antialiased`}
+      >
         <Providers>
           <SmoothScroll>{children}</SmoothScroll>
           <Toaster richColors position="top-right" duration={2000} />
